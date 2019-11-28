@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "938260",
+      "name": "score",
+      "font_class": "score",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "1130626",
+      "name": "评价",
+      "font_class": "pingjia",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "1269427",
+      "name": "My scores",
+      "font_class": "5wodejifen",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3879211",
+      "name": "记录",
+      "font_class": "jilu",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5317059",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e73d",
+      "unicode_decimal": 59197
+    },
+    {
+      "icon_id": "6237687",
+      "name": "user",
+      "font_class": "user1",
+      "unicode": "e71d",
+      "unicode_decimal": 59165
+    },
+    {
+      "icon_id": "6802049",
+      "name": "Student",
+      "font_class": "Student",
+      "unicode": "e707",
+      "unicode_decimal": 59143
+    },
+    {
+      "icon_id": "7141663",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    }
+  ]
+}
