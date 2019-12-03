@@ -7,7 +7,6 @@
     </div>
     <div class="card-body pt-3">
       <slot></slot>
-
     </div>
   </div>
 </template>

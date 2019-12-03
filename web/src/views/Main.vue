@@ -32,6 +32,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
+  /*顶部吸顶效果*/
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
 
 </style>

@@ -37,52 +37,20 @@
     </div>
 
     <!--    end of nav icons  -->
-    <m-card icon="menu" title="新闻资讯">
 
-<!--      <div class="card-body pt-3">-->
-        <div class="nav jc-between">
-          <div class="nav-item active ">
-            <div class="nav-link">热门</div>
-          </div>
-          <div class="nav-item">
-            <div class="nav-link">新闻</div>
-          </div>
-          <div class="nav-item">
-            <div class="nav-link">公告</div>
-          </div>
-          <div class="nav-item">
-            <div class="nav-link">活动</div>
-          </div>
-          <div class="nav-item">
-            <div class="nav-link">赛事</div>
-          </div>
+    <m-list-card icon="menu" title="新闻资讯" :categories="newsCats">
+      <template #items="{category}">
+        <div class="py-2 fs-lg d=flex" v-for="(news,i) in category.newsList" :key="i">
+          <span class="text-info">[{{news.categoryName}}]</span>
+          <span class="px-2">|</span>
+          <span class="flex-1 text-dark-1 text-ellipsis pr-2">{{news.title}}</span>
+          <span>{{news.date}}</span>
         </div>
-        <div class="pt-3">
-          <swiper>
-            <swiper-slide v-for="m in 5" :key="m">
-              <div class="py-2" v-for="n in 5" :key="n">
-                <span>[新闻]</span>
-                <span>|</span>
-                <span>嘻嘻嘻嘻嘻每天的明都要快乐呀</span>
-                <span>20+n</span>
-              </div>
-            </swiper-slide>
-          </swiper>
-        </div>
+      </template>
+    </m-list-card>
 
-<!--      </div>-->
-
-
-    </m-card>
-
-
-<!--    <div class="card p-3 bg-white p-3 mt-3">-->
-<!--      <div class="card-header d-flex ai-center pb-3">-->
-<!--        <i class="iconfont icon-menu"></i>-->
-<!--        <div class="fs-xl flex-1 px-2">新闻资讯</div>-->
-<!--        <i class="iconfont">...</i>-->
-<!--      </div>-->
-<!--      </div>-->
+    <m-card icon="menu" title="英雄列表"></m-card>
+    <m-card icon="menu" title="精彩视频"></m-card>
 
 
   </div>
@@ -103,10 +71,41 @@
           },
           pagination:{
             el:'.pagination-home'
-          },
+          }
           // autolay:true
-        }
+        },
+        newsCats:[
+          // {
+          //   name:'热门',
+          //   newsList:new Array(5).fill(1).map(v=>({
+          //     categoryName:'公告',
+          //     title:'每天都要快快乐乐可可爱爱',
+          //     date:'01/16'
+          //   }))
+          // },
+          // {
+          //   name:'新闻',
+          //   newsList:new Array(5).fill(1).map(v=>({
+          //     categoryName:'新闻',
+          //     title:'每天都要快快乐乐可可爱爱',
+          //     date:'01/16'
+          //   }))
+          // },
+
+
+        ]
       }
+    },
+    methods:{
+      async fetchNewsCats(){
+        const res =await this.$http.get('news/list')
+        this.newsCats=res.data
+      }
+
+    },
+    // 页面刚进来的时候做什么事情
+    created() {
+      this.fetchNewsCats()
     }
   }
 </script>
