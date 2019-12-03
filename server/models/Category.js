@@ -1,9 +1,23 @@
 // 模型文件
 const mongoose =require('mongoose')
 
-const schema =new mongoose.Schema({
-  name:{ type:String },
-  parent:{type:mongoose.SchemaTypes.Object,ref:'Category'}
+const schema = new mongoose.Schema({
+  name: { type: String },
+  parent: { type: mongoose.SchemaTypes.ObjectId, ref: 'Category' },
 })
 
-module.exports = mongoose.model('Category',schema)
+schema.virtual('children',{
+  localField:'_id',
+  foreignField:'parent',
+  justOne:false,
+  ref:'Category'
+})
+
+schema.virtual('newList',{
+  localField:'_id',
+  foreignField:'categpries',
+  justOne:false,
+  ref:'Article'
+})
+
+module.exports = mongoose.model('Category', schema)

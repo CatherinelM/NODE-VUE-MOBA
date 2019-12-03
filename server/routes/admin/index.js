@@ -33,15 +33,23 @@ module.exports =app=>{
   })
 
 // 资源列表  获取数据接口
-  router.get('/',async(req,res)=>{
-    // console.log(req.user)
-    // const modelName=require('inflection').classify(req.params.resource)
-    // const Model=require(`../../models/${modelName}`)
-    const queryOptions={}
-    if(req.Model.modeName ==='Category'){
-      queryOptions.populate='parent'
+//   router.get('/',async(req,res)=>{
+//     // console.log(req.user)
+//     // const modelName=require('inflection').classify(req.params.resource)
+//     // const Model=require(`../../models/${modelName}`)
+//     const queryOptions={}
+//     if(req.Model.modeName ==='Category'){
+//       queryOptions.populate='parent'
+//     }
+//     const items = await req.Model.find().setOptions(queryOptions).limit(100)
+//     res.send(items)
+//   })
+  router.get('/', async (req, res) => {
+    const queryOptions = {}
+    if (req.Model.modelName === 'Category') {
+      queryOptions.populate = 'parent'
     }
-    const items = await req.Model.find().setOptions(queryOptions).limit(10)
+    const items = await req.Model.find().setOptions(queryOptions).limit(100)
     res.send(items)
   })
 // 资源详情 获取详情页接口
