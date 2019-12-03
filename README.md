@@ -1,5 +1,5 @@
 "# NODE-VUE-MOBA" 
 
-user:123
+username:123
 
 password:123
