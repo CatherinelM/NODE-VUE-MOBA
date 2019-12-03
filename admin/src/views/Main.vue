@@ -10,9 +10,9 @@
             <el-menu-item index="/items/list">物品列表</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
-            <template slot="title">学生</template>
-            <el-menu-item index="/students/create">新建学生</el-menu-item>
-            <el-menu-item index="/students/list">学生列表</el-menu-item>
+            <template slot="title">英雄</template>
+            <el-menu-item index="/students/create">新建英雄</el-menu-item>
+            <el-menu-item index="/students/list">英雄列表</el-menu-item>
           </el-menu-item-group>
 <!--          <el-menu-item-group>-->
 <!--            <template slot="title">成绩</template>-->
@@ -21,8 +21,8 @@
 <!--          </el-menu-item-group>-->
           <el-menu-item-group>
 
-            <template slot="title">评价/文章</template>
-            <el-menu-item index="/articles/create">新建评价</el-menu-item>
+            <template slot="title">文章</template>
+            <el-menu-item index="/articles/create">新建文章</el-menu-item>
             <el-menu-item index="/articles/list">文章列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
