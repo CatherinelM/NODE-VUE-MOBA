@@ -43,13 +43,24 @@
         <div class="py-2 fs-lg d=flex" v-for="(news,i) in category.newsList" :key="i">
           <span class="text-info">[{{news.categoryName}}]</span>
           <span class="px-2">|</span>
-          <span class="flex-1 text-dark-1 text-ellipsis pr-2">{{news.title}}</span>
+          <span class="flex-1 text-dark-1 text-ellipsis px-2">{{news.title}}</span>
           <span>{{news.date}}</span>
         </div>
       </template>
     </m-list-card>
 
-    <m-card icon="menu" title="英雄列表"></m-card>
+    <m-list-card icon="menu" title="英雄列表" :categories="studentCats">
+      <template #items="{category}">
+        <div class="d-flex flex-wrap" style="margin: 0 -0.5rem;">
+          <div class="p-2 text-center"  style="width: 20%;"
+               v-for="(student,i) in category.studentList" :key="i">
+            <img :src="student.avatar" class="w-100">
+            <div>{{student.name}}</div>
+          </div>
+        </div>
+      </template>
+    </m-list-card>
+
     <m-card icon="menu" title="精彩视频"></m-card>
 
 
@@ -90,8 +101,9 @@
           //     title:'每天都要快快乐乐可可爱爱',
           //     date:'01/16'
           //   }))
-          // },
-
+          // }
+        ],
+        studentCats:[
 
         ]
       }
@@ -100,12 +112,16 @@
       async fetchNewsCats(){
         const res =await this.$http.get('news/list')
         this.newsCats=res.data
+      },
+      async fetchStudentCats(){
+        const res =await this.$http.get('students/list')
+        this.studentCats=res.data
       }
-
     },
     // 页面刚进来的时候做什么事情
     created() {
-      this.fetchNewsCats()
+      this.fetchNewsCats();
+      this.fetchStudentCats();
     }
   }
 </script>

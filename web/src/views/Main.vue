@@ -3,7 +3,7 @@
   <div>
     <div class="topbar bg-black py-2 px-3 d-flex ai-center">
       <div class="px-2 flex-1">
-        <div class="text-white">学生综合管理系统</div>
+        <div class="text-white">王者荣耀</div>
 <!--        <div class="text-grey-1 fs-xxs " >啊哈哈哈哈哈哈哈</div>-->
       </div>
       <button type="button" class="btn bg-primary">立即下载</button>
