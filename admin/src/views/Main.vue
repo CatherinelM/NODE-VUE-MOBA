@@ -14,10 +14,16 @@
             <el-menu-item index="/students/create">新建学生</el-menu-item>
             <el-menu-item index="/students/list">学生列表</el-menu-item>
           </el-menu-item-group>
+<!--          <el-menu-item-group>-->
+<!--            <template slot="title">成绩</template>-->
+<!--            <el-menu-item index="/score/create">新建成绩</el-menu-item>-->
+<!--            <el-menu-item index="/score/list">成绩列表</el-menu-item>-->
+<!--          </el-menu-item-group>-->
           <el-menu-item-group>
+
             <template slot="title">评价/文章</template>
             <el-menu-item index="/articles/create">新建评价</el-menu-item>
-            <el-menu-item index="/articles/list">评价列表列表</el-menu-item>
+            <el-menu-item index="/articles/list">文章列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
@@ -61,7 +67,7 @@
       </el-header>
 
       <el-main>
-        <router-view></router-view>
+        <router-view :key="$route.path"></router-view>
 <!--        <el-table :data="tableData">-->
 <!--          <el-table-column prop="date" label="日期" width="140">-->
 <!--          </el-table-column>-->

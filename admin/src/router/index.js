@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login'
 import Main from '../views/Main'
+
 import CategroyEdit from '../views/CategoryEdit'
 import CategroyList from '../views/CategoryList'
 
